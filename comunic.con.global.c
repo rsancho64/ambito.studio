@@ -3,23 +3,24 @@
 */
 #include <stdio.h>
 
-int global = 11;
 
-int aumenta(void)
+int aumenta(int x)
 {
-    return global + 1;
+    return x + 1;
 }
 
-int disminuye(void)
+int disminuye(int x)
 {
-    return global - 1;
+    return x - 1;
 }
 
 int main(int)
 {
-    printf("main0: %d\n", global);
-    global = aumenta();   // ya es una funcion
-    printf("main0: %d\n", global);    
-    global = disminuye(); // ya es una funcion
-    printf("mainF: %d\n", global);
+    int local = 11;
+    printf("main: %d\n", local);
+    local = aumenta(local);   // ya es una funcion
+    printf("main: %d\n", local);    
+    local = disminuye(local); // ya es una funcion
+    printf("main: %d\n", local);
 }
+
