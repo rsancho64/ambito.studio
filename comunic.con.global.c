@@ -7,24 +7,20 @@ int global = 11;
 
 int aumenta(void)
 {
-    printf("  ++0: %d\n", global);
-    global++;
-    printf("  ++F: %d\n", global);
-    return 0;
+    return global + 1;
 }
 
 int disminuye(void)
 {
-    printf("  --0: %d\n", global);
     global--;
-    printf("  --F: %d\n", global);    
     return 0;
 }
 
 int main(int)
 {
     printf("main0: %d\n", global);
-    aumenta();
-    disminuye();
+    global = aumenta();  // ya es una funcion
+    printf("main0: %d\n", global);    
+    disminuye();         // todavia es un procedimiemto
     printf("mainF: %d\n", global);
 }
